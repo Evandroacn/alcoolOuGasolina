@@ -17,7 +17,11 @@ object Calculations {
 
         val porct: Double = if (porcentagem) 0.75 else 0.70
         val limite = gasolinaFormatado * porct
-        val resultMessage = if (alcoolFormatado > limite) "A Gasolina é mais rentável no posto $posto" else "O Álcool é mais rentável no posto $posto"
+        val resultMessage: String = if (posto.isNotEmpty()) {
+            if (alcoolFormatado > limite) "A Gasolina é mais rentável no posto $posto" else "O Álcool é mais rentável no posto $posto"
+        } else {
+            if (alcoolFormatado > limite) "A Gasolina é mais rentável" else "O Álcool é mais rentável"
+        }
 
         response(resultMessage, false)
     }
