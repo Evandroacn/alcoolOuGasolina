@@ -88,7 +88,7 @@ fun Home() {
 
             OutlinedTextField(
                 value = posto,
-                onValueChange = { if (it.length <= 4) posto = it },
+                onValueChange = { posto = it },
                 label = { Text(text = "Posto (Opicional)") },
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 10.dp),
             )
